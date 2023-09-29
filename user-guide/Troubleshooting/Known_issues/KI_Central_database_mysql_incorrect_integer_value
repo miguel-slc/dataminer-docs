@@ -1,0 +1,39 @@
+---
+uid: KI_Central_database_mysql_incorrect_integer_value
+---
+
+# Central Database (MySQL) - Incorrect Integer value
+
+## Affected versions
+
+Any DataMiner version
+
+## Cause
+	
+The option *STRICT_TRANS_TABLES* is enabled in MySQL for the sql_mode.
+
+## Workaround
+
+1. Remove the option *STRICT_TRANS_TABLES* from sql_mode in the MySQL configuration.
+
+1. Save the changes and restart the MySQL server
+
+## Fix
+
+Not available (this configuration is by design)
+
+## Issue description
+
+Offloading to MySQL central database fails.
+ 
+The log file *SLDatabase[SLDataMiner].txt* shows error like:
+
+```txt
+02-10 11:45:04.034|30|Start forwarding alarm records
+02-10 11:45:04.772|30|Server Thread 4173 - Failure 1366='Incorrect integer value: '' for column 'iId' at row 1' for NonQuery 'LOAD DATA LOCAL INFILE 'C:\\Skyline DataMiner\\System Cache\\Offload\\dataavg\\2015_02_08_13_01_29.csv' REPLACE INTO TABLE dataavg FIELDS TERMINATED BY ' ' OPTIONALLY ENCLOSED by '"' ESCAPED BY '' LINES TERMINATED BY '
+''
+02-10 11:45:04.773|30|Failed forwarding data for 'dataavg' table: MySql.Data.MySqlClient.MySqlException (0x80004005): Incorrect integer value: '' for column 'iId' at row 1
+   at Skyline.DataMiner.SLDatabase.SLDatabaseCOM.ForwardData(SLSql centralConnection, String data)
+   at Skyline.DataMiner.SLDatabase.SLDatabaseCOM.ForwardData(SLSql centralConnection)
+02-10 11:45:04.774|30|Done forwarding alarm records
+```
