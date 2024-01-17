@@ -41,6 +41,7 @@ From DataMiner 9.5.8 onwards, it can have the following additional subtags:
 
   > [!NOTE]
   > For development and testing purposes, you can open a map without a key, using a URL like `http://localhost/` or `http://servername/`. However, note that in that case you will only have access to limited functionality of the map.
+  > Starting January 15th, 2024 it is required to register a credit card with the MapQuest acount to be able to use the API. 
 
 - **client**: If you have a "Google Maps APIs Premium Plan" license, you can specify your client ID in this attribute instead of specifying an API key.
 
