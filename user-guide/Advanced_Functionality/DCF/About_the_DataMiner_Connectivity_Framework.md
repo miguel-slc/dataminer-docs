@@ -24,4 +24,4 @@ Connections can be set in different ways:
 
 - By importing connection data from an external source (e.g. a configuration management database).
 
-- By means of automatic detection (via a DataMiner App, e.g. IP Network Manager).
+- By means of automatic detection (via a DataMiner Apps, e.g. IDP).
